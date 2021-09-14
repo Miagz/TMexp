@@ -19,7 +19,7 @@ public class Http {
         RequestBody body = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded"), payload);
         Request.Builder builder = new Request.Builder();
         int randvalue = new Random().nextInt(UserAgent.length);
-        Request request = builder.url(url).header("User-Agent", UserAgent[randvalue]).post(body).build();
+        Request request = builder.url(url).header("User-Agent", UserAgent[randvalue]).header("Cookie",Value_static.cookie).post(body).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -45,7 +45,7 @@ public class Http {
 
         Request.Builder builder = new Request.Builder();
         int randvalue = new Random().nextInt(UserAgent.length);
-        Request request = builder.get().url(url + payload).header("User-Agent", UserAgent[randvalue]).build();
+        Request request = builder.get().url(url + payload).header("User-Agent", UserAgent[randvalue]).header("Cookie",Value_static.cookie).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

@@ -31,7 +31,7 @@ public class Value_static {
     public static String cookie="";
     public static int proxy_port;
 
-    public static Boolean vuln_checkValue;
+    public static Boolean vuln_checkValue=false;
 
     public static String check_cmd="whoami";
     public static boolean checkBox_proxy=false;

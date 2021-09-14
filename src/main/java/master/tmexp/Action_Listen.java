@@ -186,8 +186,18 @@ public class Action_Listen {
         return button_zx;
     }
     public static Button shiro_key_check(Button button){
+        Http http = new Http();
+        Value_static value_static = new Value_static();
         button.setOnAction(actionEvent -> {
-            Value_static.cookie = Value_static.keyword+"=1";
+            if(Value_static.shirokey.getText()!=""){
+                value_static.cookie = value_static.keyword.getText()+"="+value_static.shirokey.getText();
+            }
+            else{
+                System.out.println("应该是走这里的吧");
+                value_static.cookie = value_static.keyword.getText()+"=1";
+            }
+            http.get_response(value_static.url_value.getText(),"","shiro");
+
         });
         return button;
     }
