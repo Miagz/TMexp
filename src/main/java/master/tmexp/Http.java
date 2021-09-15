@@ -54,7 +54,9 @@ public class Http {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 Value_static.Respone_yzxx = response.body().string();
-                Check(vuln_name);
+                if(vuln_plugin.Check(response)){
+                    Check(vuln_name);
+                }
             }
         });
     }

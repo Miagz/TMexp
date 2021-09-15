@@ -37,6 +37,8 @@ public class Value_static {
     public static boolean checkBox_proxy=false;
     public static String Respone_yzxx;
     public static  Map<String, Map> app_list = new HashMap<>();
+
+    public static Boolean wtf = true; //程序是否执行
     //按钮值
     public static  String app_value = ""; //回传的漏洞类型的值，这个就是选择后漏洞类型的值
     public static  String vuln_value =""; //漏洞编号的值
